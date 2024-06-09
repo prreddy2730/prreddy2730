@@ -1,0 +1,12 @@
+from itertools import combinations
+
+def three_sum(nums):
+    result = set()
+    for triplet in combinations(nums, 3):
+        if sum(triplet) == 0:
+            result.add(tuple(sorted(triplet)))
+    return list(result)
+
+# Example Usage
+nums = [-1, 0, 1, 2, -1, -4]
+print(three_sum(nums))
