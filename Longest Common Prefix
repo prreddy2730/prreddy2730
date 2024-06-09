@@ -1,0 +1,9 @@
+def longest_common_prefix(strs):
+    if not strs:
+        return ""
+    for i, group in enumerate(zip(*strs)):
+        if len(set(group)) > 1:
+            return strs[0][:i]
+    return min(strs)
+input_strings = ["flower", "flow", "flight"]
+print(longest_common_prefix(input_strings))  # Output: "fl"
